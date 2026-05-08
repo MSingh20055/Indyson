@@ -150,12 +150,15 @@ function App() {
               <p className="section-subtitle" style={{ fontSize: 'var(--subtitle-size, 1.1rem)' }}>Websites, automation systems, custom bots, and scalable digital solutions.</p>
               <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <button className="btn-primary">View Projects</button>
-                <button 
+                <a 
                   className="btn-secondary"
-                  onClick={() => window.open('https://forms.gle/WKa4BWxUBtvEs7Pn7', '_blank')}
+                  href="https://forms.gle/WKa4BWxUBtvEs7Pn7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
                 >
                   Start a Project
-                </button>
+                </a>
               </div>
             </div>
           </TextZoomScroll>

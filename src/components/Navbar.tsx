@@ -165,8 +165,10 @@ export const Navbar = () => {
 
         {/* CTA Button */}
         <div>
-          <button 
-            onClick={() => window.open('https://forms.gle/WKa4BWxUBtvEs7Pn7', '_blank')}
+          <a 
+            href="https://forms.gle/WKa4BWxUBtvEs7Pn7"
+            target="_blank"
+            rel="noopener noreferrer"
             onMouseEnter={() => setIsBtnHovered(true)}
             onMouseLeave={() => setIsBtnHovered(false)}
             style={{ 
@@ -181,6 +183,10 @@ export const Navbar = () => {
               fontFamily: "'Inter', sans-serif",
               fontWeight: 500,
               cursor: 'pointer',
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               transform: isBtnHovered ? 'scale(1.04) translateY(-1px)' : 'scale(1) translateY(0)',
               boxShadow: isBtnHovered 
                 ? '0 0 25px rgba(0, 240, 255, 0.45), inset 0 0 8px rgba(0, 240, 255, 0.2)' 
@@ -190,7 +196,7 @@ export const Navbar = () => {
             }}
           >
             Start a Project
-          </button>
+          </a>
         </div>
       </div>
 
