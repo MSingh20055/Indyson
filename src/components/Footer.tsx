@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const DiscordIcon = ({ size = 20 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
