@@ -24,7 +24,8 @@ export const TextZoomScroll = ({ children }: TextZoomScrollProps) => {
       style={{
         height: "var(--text-zoom-height, 120vh)",
         position: "relative",
-        margin: "var(--text-zoom-margin, 80px 0)"
+        margin: "var(--text-zoom-margin, 80px 0)",
+        width: "100%"
       }}
     >
       <div
@@ -34,18 +35,21 @@ export const TextZoomScroll = ({ children }: TextZoomScrollProps) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          width: "100%"
         }}
       >
-        <motion.div
-          style={{
-            scale,
-            opacity,
-            transformOrigin: "center center",
-            willChange: "transform, opacity",
-          }}
-        >
-          {children}
-        </motion.div>
+        <div style={{ position: "relative", width: "100%", overflow: "hidden", display: "flex", justifyContent: "center", padding: "20px 0" }}>
+          <motion.div
+            style={{
+              scale,
+              opacity,
+              transformOrigin: "center center",
+              willChange: "transform, opacity",
+            }}
+          >
+            {children}
+          </motion.div>
+        </div>
       </div>
     </div>
   );
