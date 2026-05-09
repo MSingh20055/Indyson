@@ -22,15 +22,15 @@ export const TextZoomScroll = ({ children }: TextZoomScrollProps) => {
     <div
       ref={ref}
       style={{
-        height: "140vh", // Perfect balanced height
+        height: "var(--text-zoom-height, 120vh)",
         position: "relative",
-        margin: "80px 0"
+        margin: "var(--text-zoom-margin, 80px 0)"
       }}
     >
       <div
         style={{
           position: "sticky",
-          top: "35vh",
+          top: "var(--text-zoom-sticky-top, 30vh)",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",

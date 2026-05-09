@@ -15,6 +15,9 @@
   --section-title-size: 3rem;
   --text-zoom-size: 4rem;
   --subtitle-size: 1.2rem;
+  --text-zoom-height: 120vh;
+  --text-zoom-sticky-top: 30vh;
+  --text-zoom-margin: 80px 0;
 }
 
 * {
@@ -171,6 +174,9 @@ h1, h2, h3, h4, h5, h6 {
     --text-zoom-size: 2rem;
     --section-title-size: 2rem;
     --subtitle-size: 1rem;
+    --text-zoom-height: 80vh;
+    --text-zoom-sticky-top: 25vh;
+    --text-zoom-margin: 40px 0;
   }
 
   .section {
@@ -206,5 +212,8 @@ h1, h2, h3, h4, h5, h6 {
     --hero-title-size: 1.8rem;
     --text-zoom-size: 1.6rem;
     --section-title-size: 1.8rem;
+    --text-zoom-height: 60vh;
+    --text-zoom-sticky-top: 20vh;
+    --text-zoom-margin: 20px 0;
   }
 }
