@@ -18,6 +18,11 @@
   --text-zoom-height: 70vh;
   --text-zoom-sticky-top: 25vh;
   --text-zoom-margin: 0;
+  
+  /* Terminal Size Variables */
+  --terminal-max-width: 650px;
+  --terminal-font-size: 1.05rem;
+  --terminal-min-height: 320px;
 }
 
 * {
@@ -246,6 +251,11 @@ h1, h2, h3, h4, h5, h6 {
     --text-zoom-height: 40vh;
     --text-zoom-sticky-top: 15vh;
     --text-zoom-margin: 0;
+    
+    /* Terminal Mobile Overrides */
+    --terminal-max-width: 500px;
+    --terminal-font-size: 0.85rem;
+    --terminal-min-height: 280px;
   }
 
   .hero-content {

@@ -64,7 +64,7 @@ export const AnimatedTerminal = () => {
       onClick={handleTerminalClick}
       style={{
         width: "100%",
-        maxWidth: "500px",
+        maxWidth: "var(--terminal-max-width, 650px)",
         background: "#0a0a0a",
         borderRadius: "12px",
         border: "1px solid rgba(255,255,255,0.1)",
@@ -92,7 +92,7 @@ export const AnimatedTerminal = () => {
       </div>
 
       {/* Terminal Body */}
-      <div style={{ padding: "20px", minHeight: "280px", fontSize: "0.9rem", lineHeight: "1.6" }}>
+      <div style={{ padding: "20px", minHeight: "var(--terminal-min-height, 320px)", fontSize: "var(--terminal-font-size, 1.05rem)", lineHeight: "1.6" }}>
         {autoLines.slice(0, visibleLines).map((line, i) => (
           <motion.div
             key={i}
