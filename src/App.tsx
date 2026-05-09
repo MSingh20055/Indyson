@@ -170,16 +170,9 @@ function App() {
              </LampEffect>
 
              {/* Featured Row with Left Card and Right Dynamic Panel */}
-             <div style={{ 
-               display: 'flex', 
-               gap: '40px', 
-               alignItems: 'stretch', 
-               flexWrap: 'wrap', 
-               marginTop: '30px',
-               marginBottom: '30px'
-             }}>
+             <div className="services-row">
                {/* Left: Active Service Card */}
-                <div style={{ flex: '1 1 350px' }}>
+                <div className="service-card-wrapper">
                   <div 
                     className="card-service active"
                     style={{ height: '100%', minHeight: '260px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
@@ -222,19 +215,8 @@ function App() {
                 </div>
 
                 {/* Right: Dynamic Description Panel */}
-                <div style={{ flex: '1.2 1 450px' }}>
-                  <div className="glass" style={{
-                    padding: '40px',
-                    borderRadius: '16px',
-                    border: '1px solid rgba(0, 240, 255, 0.12)',
-                    boxShadow: '0 10px 40px rgba(0, 240, 255, 0.03)',
-                    minHeight: '260px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    height: '100%',
-                    overflow: 'hidden'
-                  }}>
+                <div className="service-desc-wrapper">
+                  <div className="glass service-desc-card">
                     <AnimatePresence mode="wait">
                       <motion.div 
                         key={activeService}

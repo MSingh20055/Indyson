@@ -159,6 +159,40 @@ h1, h2, h3, h4, h5, h6 {
   background: #555;
 }
 
+/* Services Row Styles */
+.services-row {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.service-card-wrapper {
+  flex: 1 1 350px;
+  width: 100%;
+}
+
+.service-desc-wrapper {
+  flex: 1.2 1 450px;
+  width: 100%;
+}
+
+.service-desc-card {
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 240, 255, 0.12);
+  box-shadow: 0 10px 40px rgba(0, 240, 255, 0.03);
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+}
+
 /* Responsive Overrides */
 @media (max-width: 1024px) {
   :root {
@@ -204,6 +238,22 @@ h1, h2, h3, h4, h5, h6 {
   
   header nav {
     display: none !important; /* Hide standard nav on mobile */
+  }
+
+  .services-row {
+    gap: 20px;
+  }
+
+  .service-card-wrapper {
+    flex: 1 1 100%;
+  }
+
+  .service-desc-wrapper {
+    flex: 1 1 100%;
+  }
+
+  .service-desc-card {
+    padding: 24px;
   }
 }
 
