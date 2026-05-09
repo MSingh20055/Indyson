@@ -127,6 +127,10 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
+#services, #services-details {
+  scroll-margin-top: 100px;
+}
+
 .section-title {
   font-size: 3rem;
   margin-bottom: 1rem;
@@ -229,6 +233,10 @@ h1, h2, h3, h4, h5, h6 {
 
   .container {
     padding: 0 16px;
+  }
+
+  #services, #services-details {
+    scroll-margin-top: 80px;
   }
   
   /* Mobile navbar layout adjustments */
