@@ -27,7 +27,7 @@
   font-family: 'Inter', sans-serif;
 }
 
-body {
+html, body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   overflow-x: hidden;
@@ -169,6 +169,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 40px;
   align-items: stretch;
   flex-wrap: wrap;
+  justify-content: center;
   margin-top: 30px;
   margin-bottom: 30px;
   width: 100%;
@@ -254,10 +255,14 @@ h1, h2, h3, h4, h5, h6 {
 
   .service-card-wrapper {
     flex: 1 1 100%;
+    margin: 0 auto;
+    max-width: 100%;
   }
 
   .service-desc-wrapper {
     flex: 1 1 100%;
+    margin: 0 auto;
+    max-width: 100%;
   }
 
   .service-desc-card {
