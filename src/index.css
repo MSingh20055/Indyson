@@ -15,9 +15,9 @@
   --section-title-size: 3rem;
   --text-zoom-size: 4rem;
   --subtitle-size: 1.2rem;
-  --text-zoom-height: 120vh;
-  --text-zoom-sticky-top: 30vh;
-  --text-zoom-margin: 80px 0;
+  --text-zoom-height: 70vh;
+  --text-zoom-sticky-top: 25vh;
+  --text-zoom-margin: 0;
 }
 
 * {
@@ -204,6 +204,30 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+/* Hero Layout Classes */
+.hero-content {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 30px;
+  flex-wrap: wrap;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-self: flex-start;
+}
+
 /* Responsive Overrides */
 @media (max-width: 1024px) {
   :root {
@@ -215,13 +239,28 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   :root {
-    --hero-title-size: 2.2rem;
+    --hero-title-size: 2.8rem;
     --text-zoom-size: 2rem;
-    --section-title-size: 2rem;
-    --subtitle-size: 1rem;
-    --text-zoom-height: 80vh;
-    --text-zoom-sticky-top: 25vh;
-    --text-zoom-margin: 40px 0;
+    --section-title-size: 2.2rem;
+    --subtitle-size: 1.15rem;
+    --text-zoom-height: 40vh;
+    --text-zoom-sticky-top: 15vh;
+    --text-zoom-margin: 0;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    align-self: center;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+    gap: 20px;
   }
 
   .section {
@@ -278,11 +317,11 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 480px) {
   :root {
-    --hero-title-size: 1.8rem;
-    --text-zoom-size: 1.6rem;
-    --section-title-size: 1.8rem;
-    --text-zoom-height: 60vh;
-    --text-zoom-sticky-top: 20vh;
-    --text-zoom-margin: 20px 0;
+    --hero-title-size: 2.5rem;
+    --text-zoom-size: 1.8rem;
+    --section-title-size: 2rem;
+    --text-zoom-height: 35vh;
+    --text-zoom-sticky-top: 15vh;
+    --text-zoom-margin: 0;
   }
 }

@@ -14,20 +14,6 @@ export const ShootingStarsBackground = () => {
     let width = window.innerWidth;
     let height = window.innerHeight;
 
-    let resizeTimeout: number;
-    const setCanvasSize = () => {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
-    };
-    const handleResize = () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = window.setTimeout(setCanvasSize, 120);
-    };
-    setCanvasSize();
-    window.addEventListener("resize", handleResize);
-
     interface ShootingStar {
       x: number;
       y: number;
@@ -37,32 +23,51 @@ export const ShootingStarsBackground = () => {
       opacity: number;
       width: number;
     }
-    
+
     let shootingStars: ShootingStar[] = [];
-    let timeUntilNextStar = Math.random() * 800 + 200; // Spawn much more frequently
+    
+    let resizeTimeout: number;
+    const setCanvasSize = () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    };
+    
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = window.setTimeout(setCanvasSize, 150);
+    };
+    
+    setCanvasSize();
+    window.addEventListener("resize", handleResize);
+
+    // Initial frequent spawn
+    let timeUntilNextStar = Math.random() * 100 + 50; 
     let lastTime = performance.now();
 
     const render = (time: number) => {
       const deltaTime = time - lastTime;
       lastTime = time;
 
-      // Pitch black background with slight trailing clear for ultra-realism
-      ctx.fillStyle = "rgba(0, 0, 0, 1)";
+      // Dark background with slight transparency for motion blur trails
+      ctx.fillStyle = "rgba(5, 5, 5, 0.3)";
       ctx.fillRect(0, 0, width, height);
 
-      // Spawn new shooting stars rapidly for high density, capped at 15 concurrent stars
+      // Spawn new shooting stars rapidly for high density, capped at 30 concurrent stars
       timeUntilNextStar -= deltaTime;
-      if (timeUntilNextStar <= 0 && shootingStars.length < 15) {
+      if (timeUntilNextStar <= 0 && shootingStars.length < 30) {
         shootingStars.push({
           x: Math.random() * width * 1.5, 
           y: Math.random() * height * 0.5 - height * 0.5, 
-          length: Math.random() * 80 + 30, // Realistic shorter length
-          speed: Math.random() * 12 + 8, // Very fast
-          angle: Math.PI / 4 + (Math.random() * 0.1 - 0.05), // Consistently diagonal
+          length: Math.random() * 80 + 40, 
+          speed: Math.random() * 15 + 10, 
+          angle: Math.PI / 4 + (Math.random() * 0.1 - 0.05),
           opacity: 1,
-          width: Math.random() * 0.5 + 0.5 // Ultra thin
+          width: Math.random() * 0.8 + 0.2 // Reduced width (0.2 to 1.0)
         });
-        timeUntilNextStar = Math.random() * 150 + 20; // Massively increased frequency (20-170ms)
+        // Extremely fast spawn rate (20-150ms)
+        timeUntilNextStar = Math.random() * 130 + 20;
       }
 
       // Update and draw shooting stars
@@ -80,9 +85,8 @@ export const ShootingStarsBackground = () => {
           star.y - star.length * Math.sin(star.angle)
         );
         
-        // Realistic colors: Bright white head, quickly fading cyan/blue trail
         gradient.addColorStop(0, "rgba(255, 255, 255, 1)");
-        gradient.addColorStop(0.1, "rgba(200, 240, 255, 0.8)");
+        gradient.addColorStop(0.2, "rgba(0, 240, 255, 0.8)");
         gradient.addColorStop(1, "rgba(0, 200, 255, 0)");
 
         ctx.globalAlpha = star.opacity;
@@ -94,6 +98,7 @@ export const ShootingStarsBackground = () => {
         );
         ctx.strokeStyle = gradient;
         ctx.lineWidth = star.width;
+        ctx.lineCap = "round";
         ctx.stroke();
 
         // Remove if off screen
@@ -127,9 +132,9 @@ export const ShootingStarsBackground = () => {
         left: 0,
         width: "100%",
         height: "100%",
-        zIndex: -1, 
+        zIndex: 0, 
         pointerEvents: "none", 
-        background: "#000000" // Pitch black space
+        background: "#050505"
       }}
     />
   );

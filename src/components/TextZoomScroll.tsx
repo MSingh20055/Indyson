@@ -13,8 +13,19 @@ export const TextZoomScroll = ({ children }: TextZoomScrollProps) => {
     offset: ["start end", "end start"],
   });
 
-  // Smoothly zoom in as the element scrolls through the viewport
-  const scale = useTransform(scrollYProgress, [0.1, 0.7], [1, 1.8]);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Smoothly zoom in as the element scrolls through the viewport (desktop only)
+  const desktopScale = useTransform(scrollYProgress, [0.1, 0.7], [1, 1.8]);
+  const scale = isMobile ? 1 : desktopScale;
+  
   // Fade out smoothly towards the end of the scroll before the next section overlaps
   const opacity = useTransform(scrollYProgress, [0.1, 0.5, 0.7], [1, 1, 0]);
 
@@ -38,7 +49,7 @@ export const TextZoomScroll = ({ children }: TextZoomScrollProps) => {
           width: "100%"
         }}
       >
-        <div style={{ position: "relative", width: "100%", overflow: "hidden", display: "flex", justifyContent: "center", padding: "20px 0" }}>
+        <div style={{ position: "relative", width: "100%", overflow: "visible", display: "flex", justifyContent: "center", padding: "20px 0" }}>
           <motion.div
             style={{
               scale,

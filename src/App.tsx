@@ -103,7 +103,7 @@ function App() {
           {/* Split Hero Section */}
           <section id="home" className="section container" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', paddingTop: '100px' }}>
             <div style={{ display: 'flex', width: '100%', gap: '40px', flexWrap: 'wrap', alignItems: 'center' }}>
-              <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <div className="hero-content">
                 <h1 style={{ fontSize: 'var(--hero-title-size)', marginBottom: '20px', lineHeight: 1.1 }}>
                   Elite Digital<br />
                   <CanvasText text="Execution" />
@@ -111,7 +111,7 @@ function App() {
                 <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--subtitle-size, 1.2rem)', lineHeight: '1.6', marginBottom: '40px', maxWidth: '500px' }}>
                   Indyson is a team of elite creators and developers building modern digital systems. We craft custom Discord bots, AI automation, and premium UI/UX designs that elevate your brand beyond limits.
                 </p>
-                <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+                <div className="hero-buttons">
                   <button
                     className="btn-primary"
                     onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
@@ -121,7 +121,7 @@ function App() {
                 </div>
 
                 {/* Elite stats dashboard */}
-                <div style={{ display: 'flex', gap: '40px', marginTop: '40px', borderTop: '1px solid rgba(255, 255, 255, 0.05)', paddingTop: '30px', flexWrap: 'wrap' }}>
+                <div className="hero-stats">
                   <div>
                     <div style={{ fontSize: '1.8rem', fontWeight: 700, color: '#ffffff', fontFamily: "'Outfit', sans-serif" }}>50+</div>
                     <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '4px' }}>Builds Completed</div>
